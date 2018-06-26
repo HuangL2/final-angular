@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group clearfix" style="margin: 0px;">
+      <ul class="col-xs-9">
+        <h1>{{playlist.name}}</h1>
+        <h5>{{playlist.description}}</h5>
+      </ul>
+      <ul class="col-xs-3" style="padding-top: 40px;">
+        <button class="btn-success"> <h4>Convert to Youtube</h4> </button>
+      </ul>
+    </ul>
+    <ul class="list-group clearfix">
+      <hr>
+      <ul class="list-inline clearfix" style="padding-left: 15px; padding-right: 15px">
+        <li class="col-xs-6" style="font-size: large;">SONG</li>
+        <li class="col-xs-4" style="font-size: large;">ARTISTS</li>
+        <li class="col-xs-2" style="font-size: large;">ALBUM</li>
+      </ul>
+
+      <div *ngFor="let track of playlist.tracks">
+        <app-track-detail [track]="track"></app-track-detail>
+      </div>
+    </ul>
+  </div>
+</div>

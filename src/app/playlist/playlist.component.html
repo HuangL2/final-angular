@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="row">
+      <div class="col-xs-12">
+        <a href="#" class="list-group clearfix">
+          <div class="pull-left"> <h4>Select a Playlist</h4> </div>
+          <div class="pull-right"> <button class="btn btn-success">Refresh</button> </div>
+        </a>
+        <div class="list-group">
+          <a href="#"
+             class="list-group-item clearfix"
+             *ngFor="let playlist of playlists"
+             [ngClass]="getActive(playlist)"
+             (click)="onPlaylistClicked(playlist)">
+            <span class="pull-left">
+              <h5 class="list-group-item-heading">{{ playlist.name }}</h5>
+              <p class="list-group-item-text">{{ playlist.description }}</p>
+            </span>
+            <span class="pull-right">
+              <img [src]="playlist.image"
+                   class="img-responsive"
+                   style="max-height: 50px">
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <app-playlist-detail [playlist]="currentPlaylist"></app-playlist-detail>
+  </div>
+</div>
