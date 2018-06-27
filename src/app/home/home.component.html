@@ -1,9 +1,12 @@
 
 <h1 class="text-center padding">Playlist Converter</h1>
 <p class="text-center">Convert your Spotify playlist to Youtube</p>
-<p class="text-center">Start by logging in</p>
-<button class="center-block btn btn-primary" (click)="onClickSpotify()"> Log In to Spotify </button>
-<hr>
-<button class="center-block btn btn-primary" (click)="onClickYoutube()"> Log In to Youtube </button>
-<hr>
-<button class="center-block btn btn-primary" (click)="onClickTest()"> Check Playlist </button>
+<div *ngIf="!playListEnabled; else playlist_able">
+  <p class="text-center">Start by logging in</p>
+  <button class="center-block btn btn-primary" (click)="onClickSpotify()">Log In to Spotify </button>
+</div>
+<ng-template #playlist_able>
+  <p class="text-center">Now let's check your playlists</p>
+  <button class="center-block btn btn-success" (click)="onPlaylistClick()"> Go to Playlist </button>
+</ng-template>
+

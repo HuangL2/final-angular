@@ -10,10 +10,10 @@ export class Service {
   }
 
   getPlaylist() {
-    return this.http.get('http://localhost:3000/playlist');
+    return this.http.get('http://localhost:3000/');
   }
 
   loginYoutube() {
-    return this.http.get('http://localhost:3000/oauth/login/google');
+    return this.http.get('https://www.google.com');
   }
 }
